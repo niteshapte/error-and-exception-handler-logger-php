@@ -18,3 +18,18 @@ The idea:
 Registers an error handler that is capable of a backtrace with the list of functions and arguments used to call the 
 code that causes an error, send that information to the current page output or the PHP error log, or send an e-mail 
 message to the administrator. The class can also trap fatal errors using a special PHP shutdown callback function.
+
+I know you guys must be wondering what is “web” in parameter. It has been observed that a website is also accessed via mobile. And sometimes web services are created to expose services. So, here “web” means if website is accessed directly then a separate error log file will be created for it, in the location configured in core.php file. So, in order to use this class for logging error when accessed through  mobile or web services or any other thing, make an entry in core.php for it. And in case you are using “any other thing”, you will need to edit the below section in code.
+
+if(ERROR_LOGGING==TRUE) {
+
+if(WEB == TRUE) {
+        error_log($errorMessage, 3, ERROR_LOGGING_FILE_WEB);
+}
+if(DEVICE == TRUE) {
+        error_log($errorMessage, 3, ERROR_LOGGING_FILE_DEVICE);
+}
+if(WEBSERVICE == TRUE) {
+        error_log($errorMessage, 3, ERROR_LOGGING_FILE_WEBSERVICE);
+}
+}
