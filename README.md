@@ -1,4 +1,4 @@
-error-and-exception-logger-php
+error-and-exception-handler-logger-php
 ===============================
 
 Hi guys,
