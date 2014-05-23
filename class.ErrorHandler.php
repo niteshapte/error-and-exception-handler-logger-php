@@ -1,5 +1,5 @@
 <?php
-include_once 'core.cg';
+include_once 'core.php';
 
 /**
  * This class handles and logs the error that occurs in the project. Exceptions will also be caught by this class.
